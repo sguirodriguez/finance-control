@@ -1,17 +1,9 @@
-import { createUserUseCase } from "./useCases/createUser";
+import express from 'express'
+import { ApiExpress } from './api/express/api.express'
 
-const createUser = async () => {
-    const user = await createUserUseCase.execute({ name: "Samuel", email: "samuelribeiromuca@gmail.com", birthOfDate: new Date(), password: '123' })
-}
-const createUser2 = async () => {
-    const user2 = await createUserUseCase.execute({ name: "Cristiano", email: "cristiano@gmail.com", birthOfDate: new Date(), password: '123' })
-    const modified = user2.map((item) => {
-        return {
-            name: item.name
-        }
-    })
-    console.log("user", modified)
-}
+const app = express()
 
-createUser()
-createUser2()
+const apiExpress = ApiExpress.build(app)
+
+apiExpress.start(3000)
+apiExpress.initRoutes()

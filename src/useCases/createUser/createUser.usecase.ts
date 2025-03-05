@@ -1,6 +1,8 @@
-import { User } from "../../entities/User";
-import { IUserRepository } from "../../repositories/userRepository/IUserRepository";
-import { ICreateUserRequestDTO } from "./CreateUserDTO";
+import { User } from "../../entities/user";
+import { IUserRepository } from "../../repositories/userRepository/user.repository";
+import { ICreateUserRequestDTO } from "./createUser";
+
+//dependecy inversion-> não depende de uma implementação direta/concreta e sim do contrato/interface
 
 export class CreateUserUseCase {
     constructor(private usersRepository: IUserRepository) { }

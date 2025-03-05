@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-
+//single responsability -> uma classe deve ser responsável por um único ator 
+//open-closed -> fechado para modificações, mas aberto a extensões
 interface UserProps {
     id?: string;
     name: string;

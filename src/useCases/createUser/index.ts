@@ -1,7 +1,6 @@
-import { PostgresUserRepository } from "../../repositories/userRepository/PostgresUserRepository";
-import { CreateUserController } from "./CreateUserController";
-import { CreateUserUseCase } from "./CreateUserUseCase";
-
+import { PostgresUserRepository } from "../../repositories/userRepository/user.repository.prisma";
+import { CreateUserController } from "./createUser.controller";
+import { CreateUserUseCase } from "./createUser.usecase";
 
 const userRepository = PostgresUserRepository.build();
 const createUserUseCase = CreateUserUseCase.build(userRepository);
