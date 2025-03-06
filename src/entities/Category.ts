@@ -20,6 +20,6 @@ export class Category {
         return new Category({ name, type, date })
     }
     public static with(props: Category) {
-        return new Category(props)
+        return new Category(props, props.id)
     }
 }

@@ -19,6 +19,6 @@ export class User {
         return new User({ name, password, email, birthOfDate });
     }
     public static with(props: User) {
-        return new User(props);
+        return new User(props, props?.id);
     }
 }

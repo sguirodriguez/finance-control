@@ -22,6 +22,6 @@ export class Transaction {
         return new Transaction({ userId, categoryId, amount, title, description })
     }
     public static with(props: Transaction) {
-        return new Transaction(props)
+        return new Transaction(props, props.id)
     }
 }

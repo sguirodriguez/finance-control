@@ -23,6 +23,6 @@ export class FinacialGoal {
         return new FinacialGoal({ userId, categoryId, type, amount, date })
     }
     public static with(props: FinacialGoal) {
-        return new FinacialGoal(props)
+        return new FinacialGoal(props, props.id)
     }
 }
