@@ -1,4 +1,5 @@
 import globalRoutes from "../../routes/global";
+import userRoutes from "../../routes/user"
 import { Api } from "../api";
 import { Express } from "express";
 
@@ -17,5 +18,6 @@ export class ApiExpress implements Api {
 
     public initRoutes() {
         this.app.use(globalRoutes)
+        this.app.use(userRoutes)
     }
 }

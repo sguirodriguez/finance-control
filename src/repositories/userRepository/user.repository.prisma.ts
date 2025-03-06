@@ -13,14 +13,16 @@ export class PostgresUserRepository implements IUserRepository {
     }
 
     async findByEmail(email: string): Promise<User> {
-        console.log("find", email)
-        const user = this.users.find((item) => item.email = email);
-
+        const user = this.users.find((item) => item.email == email);
+        if (!user) {
+            return
+        }
         return user
     }
 
     async save(user: User): Promise<User[]> {
         this.users.push(user)
+
         return this.users
     }
 }
