@@ -1,7 +1,7 @@
 
 import { User } from "../../entities/user";
 import { IUserRepository } from "./user.repository";
-let usersMemoryLeak = []
+let usersMemoryLeak: User[] = []
 //LISKOV --> DEFINE COMO SERÁ IMPLEMENTADO O REPOSITORY, QUALQUER IMPLEMENTAÇÃO DESSA INTERFACE PODE SER USADA NA CRIAÇÃO DE USUÁRIO
 //Uma classe deve ser possível ser subistituida por uma subclasse 
 // EXEMPLO: TENHO UMA CRIAÇÃO DE USUÁRIO EM POSTGREE E OUTRA EM MYSQL, SE OUTRA REPOSITORY(MONGO) IMPLEMENTA ESSA INTERFACE/CONTRATO E CONSEGUE SUBSTITUIR A PRINCIPAL, CAI NO PRINCIPIO DE LISKOV
@@ -34,5 +34,22 @@ export class PostgresUserRepository implements IUserRepository {
         usersMemoryLeak[foundedUser].birthOfDate = user.birthOfDate ? user.birthOfDate : usersMemoryLeak[foundedUser].birthOfDate;
 
         return user
+    }
+    async findById(userId: string): Promise<User> {
+        const user = usersMemoryLeak.find((item) => item.id = userId);
+        if (!user) {
+            return
+        }
+
+        return user
+    }
+    async delete(userId: string) {
+        const index = usersMemoryLeak.findIndex((item) => item.id !== userId)
+
+        if (index !== -1) {
+            usersMemoryLeak.splice(index, 1);
+        }
+
+        return
     }
 }

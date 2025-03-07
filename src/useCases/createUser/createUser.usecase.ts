@@ -5,7 +5,7 @@ import { CreateUser, ICreateUserRequestDTO } from "./createUser";
 //dependecy inversion-> não depende de uma implementação direta/concreta e sim do contrato/interface
 
 export class CreateUserUseCase implements CreateUser {
-    constructor(private usersRepository: IUserRepository) { }
+    constructor(private readonly usersRepository: IUserRepository) { }
 
     public static build(usersRepository: IUserRepository) {
         return new CreateUserUseCase(usersRepository)
