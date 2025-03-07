@@ -13,7 +13,7 @@ export class UpdateUserController {
 
         try {
             const updatedUser = this.updateUserUseCase.execute({ id, name, email, password, birthOfDate })
-            return response.status(201).json({ updatedUser })
+            return response.status(200).json({ updatedUser })
         } catch (error) {
             throw new Error('error on update User')
         }
