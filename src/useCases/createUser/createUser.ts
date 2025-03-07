@@ -4,3 +4,7 @@ export interface ICreateUserRequestDTO {
     email: string;
     birthOfDate: Date;
 }
+
+export interface CreateUser {
+    execute(data: ICreateUserRequestDTO): void;
+}

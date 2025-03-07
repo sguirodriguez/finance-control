@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { CreateUserUseCase } from "./createUser.usecase";
+import { CreateUser } from "./createUser";
 
 export class CreateUserController {
     constructor(
-        private createUserUseCase: CreateUserUseCase,
+        private createUserUseCase: CreateUser,
     ) { }
 
-    public static build(createUserUseCase: CreateUserUseCase) {
+    public static build(createUserUseCase: CreateUser) {
         return new CreateUserController(createUserUseCase)
     }
 
