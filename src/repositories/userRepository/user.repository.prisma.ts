@@ -43,8 +43,8 @@ export class PostgresUserRepository implements IUserRepository {
 
         return user
     }
-    async delete(userId: string) {
-        const index = usersMemoryLeak.findIndex((item) => item.id !== userId)
+    async delete(id: string) {
+        const index = usersMemoryLeak.findIndex((item) => item.id === id)
 
         if (index !== -1) {
             usersMemoryLeak.splice(index, 1);

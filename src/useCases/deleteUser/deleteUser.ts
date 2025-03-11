@@ -1,3 +1,3 @@
 export interface DeleteUser {
-    execute(userId: string): void;
+    execute(id: string): void;
 }

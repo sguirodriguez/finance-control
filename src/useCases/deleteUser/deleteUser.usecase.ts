@@ -8,12 +8,12 @@ export class DeleteUserUseCase implements DeleteUser {
         return new DeleteUserUseCase(userRepository)
     }
 
-    async execute(userId: string) {
-        const user = this.userRepository.findById(userId)
+    async execute(id: string) {
+        const user = this.userRepository.findById(id)
         if (!user) {
             return
         }
-        const deletedUser = await this.userRepository.delete(userId)
+        const deletedUser = await this.userRepository.delete(id)
         return deletedUser
     }
 }

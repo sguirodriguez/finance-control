@@ -8,9 +8,9 @@ export class DeleteUserController {
         return new DeleteUserController(deleteUserUseCase);
     }
     async handle(request: Request, response: Response) {
-        const { userId } = request.body;
+        const { id } = request.body;
         try {
-            const result = this.deleteUserUseCase.execute(userId)
+            const result = this.deleteUserUseCase.execute(id)
 
             return response.status(200).json(result)
         } catch (error) {

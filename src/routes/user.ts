@@ -15,7 +15,7 @@ router.put("/user", (req: Request, res: Response) => {
     return
 })
 
-router.delete("user", (req: Request, res: Response) => {
+router.delete("/user", (req: Request, res: Response) => {
     deleteUserController.handle(req, res)
     return
 })

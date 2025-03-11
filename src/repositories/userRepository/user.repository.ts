@@ -5,5 +5,5 @@ export interface IUserRepository {
     save(user: User): Promise<User[]>;
     update(user: User): Promise<User>;
     findById(userId: string): Promise<User>;
-    delete(userId: string): Promise<void>;
+    delete(id: string): Promise<void>;
 }
