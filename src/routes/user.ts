@@ -5,17 +5,17 @@ import { deleteUserController } from '../useCases/deleteUser'
 
 const router = express.Router()
 
-router.post("/user", (req: Request, res: Response) => {
+router.post("/", (req: Request, res: Response) => {
     createUserController.handle(req, res)
     return
 })
 
-router.put("/user", (req: Request, res: Response) => {
+router.put("/", (req: Request, res: Response) => {
     updateUserController.handle(req, res)
     return
 })
 
-router.delete("/user", (req: Request, res: Response) => {
+router.delete("/", (req: Request, res: Response) => {
     deleteUserController.handle(req, res)
     return
 })

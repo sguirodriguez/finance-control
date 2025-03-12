@@ -4,12 +4,17 @@ import { ICategoryRepository } from "./category.repository";
 let categoryMemoryLeak: Category[] = []
 
 export class CategoryRepositoryPrisma implements ICategoryRepository {
-    constructor() {
-
+    public static build(){
+        return new CategoryRepositoryPrisma()
     }
+
+    async findById(id: string): Promise<Category> {
+        const category = categoryMemoryLeak.find((item)=>item.id===id)
+        return category
+    }
+
     async save(category: Category) {
         const hasCategory = categoryMemoryLeak.find((item) => item.id === category.id)
-
         if (hasCategory) {
             return
         }
@@ -28,8 +33,6 @@ export class CategoryRepositoryPrisma implements ICategoryRepository {
         }
         categoryMemoryLeak[categoryFoundedIndex].name = category.name ? category.name : categoryMemoryLeak[categoryFoundedIndex].name;
         categoryMemoryLeak[categoryFoundedIndex].type = category.type ? category.type : categoryMemoryLeak[categoryFoundedIndex].type;
-        categoryMemoryLeak[categoryFoundedIndex].date = category.date ? category.date : categoryMemoryLeak[categoryFoundedIndex].date;
-
         return
     }
 
@@ -39,7 +42,6 @@ export class CategoryRepositoryPrisma implements ICategoryRepository {
         if (index !== -1) {
             categoryMemoryLeak.splice(index, 1);
         }
-
         return
     }
 

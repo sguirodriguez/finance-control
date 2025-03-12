@@ -5,9 +5,9 @@ let usersMemoryLeak: User[] = []
 //LISKOV --> DEFINE COMO SERÁ IMPLEMENTADO O REPOSITORY, QUALQUER IMPLEMENTAÇÃO DESSA INTERFACE PODE SER USADA NA CRIAÇÃO DE USUÁRIO
 //Uma classe deve ser possível ser subistituida por uma subclasse 
 // EXEMPLO: TENHO UMA CRIAÇÃO DE USUÁRIO EM POSTGREE E OUTRA EM MYSQL, SE OUTRA REPOSITORY(MONGO) IMPLEMENTA ESSA INTERFACE/CONTRATO E CONSEGUE SUBSTITUIR A PRINCIPAL, CAI NO PRINCIPIO DE LISKOV
-export class PostgresUserRepository implements IUserRepository {
+export class UserRepositoryPrisma implements IUserRepository {
     public static build() {
-        return new PostgresUserRepository();
+        return new UserRepositoryPrisma();
     }
 
     async findByEmail(email: string): Promise<User> {
