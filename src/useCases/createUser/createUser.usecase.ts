@@ -3,7 +3,6 @@ import { IUserRepository } from "../../repositories/userRepository/user.reposito
 import { CreateUser, ICreateUserRequestDTO } from "./createUser";
 
 //dependecy inversion-> não depende de uma implementação direta/concreta e sim do contrato/interface
-
 export class CreateUserUseCase implements CreateUser {
     constructor(private readonly usersRepository: IUserRepository) { }
 

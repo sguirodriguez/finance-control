@@ -15,6 +15,7 @@ export class Category {
     public static build({ name, type }: Category) {
         return new Category({ name, type })
     }
+    
     public static with(props: Category) {
         return new Category(props, props.id)
     }

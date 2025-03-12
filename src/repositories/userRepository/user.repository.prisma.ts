@@ -17,11 +17,13 @@ export class UserRepositoryPrisma implements IUserRepository {
         }
         return user
     }
+
     async save(user: User): Promise<User[]> {
         usersMemoryLeak.push(user)
 
         return usersMemoryLeak
     }
+
     async update(user: User): Promise<User> {
         const foundedUser = usersMemoryLeak.findIndex((item) => item.id === user?.id)
 
@@ -35,6 +37,7 @@ export class UserRepositoryPrisma implements IUserRepository {
 
         return user
     }
+    
     async findById(userId: string): Promise<User> {
         const user = usersMemoryLeak.find((item) => item.id = userId);
         if (!user) {
@@ -43,6 +46,7 @@ export class UserRepositoryPrisma implements IUserRepository {
 
         return user
     }
+    
     async delete(id: string) {
         const index = usersMemoryLeak.findIndex((item) => item.id === id)
 
