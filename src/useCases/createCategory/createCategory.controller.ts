@@ -9,10 +9,10 @@ export class CreateCategoryController {
     }
 
     async handle(request: Request, response: Response){
-        const { id, name, type } =request.body
+        const { name, type } =request.body
         try {
-            const result = this.createCategoryUseCase.execute({ id, name, type })
-            response.status(201).json(result)
+            await this.createCategoryUseCase.execute({ name, type })
+            response.status(201).json({ status: 'ok' })
         } catch (error) {
             throw new Error('error on create category')
         }

@@ -12,15 +12,20 @@ export class UserRepositoryPrisma implements IUserRepository {
 
     async findByEmail(email: string): Promise<User> {
         const user = usersMemoryLeak.find((item) => item.email == email);
-        if (!user) {
-            return
-        }
         return user
     }
 
     async save(user: User): Promise<User[]> {
+        const hasUser = usersMemoryLeak.find(item=> item.id == user.id)
+        if(!hasUser){
+            return 
+        }
         usersMemoryLeak.push(user)
 
+        return usersMemoryLeak
+    }
+
+    async list() {
         return usersMemoryLeak
     }
 

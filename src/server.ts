@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 const server = ApiExpress.build(app)
 
-server.start(3000)
+server.start(3333)
 server.initRoutes()
 
 

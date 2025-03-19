@@ -14,12 +14,13 @@ export class CategoryRepositoryPrisma implements ICategoryRepository {
     }
 
     async save(category: Category) {
-        const hasCategory = categoryMemoryLeak.find((item) => item.id === category.id)
-        if (hasCategory) {
+        const hasCategory = categoryMemoryLeak.find(item=>item.id === category.id)
+        if(!hasCategory){
             return
         }
         categoryMemoryLeak.push(category)
-        return
+
+        return categoryMemoryLeak
     }
 
     async list() {
