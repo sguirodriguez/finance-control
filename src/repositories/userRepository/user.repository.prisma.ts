@@ -1,4 +1,5 @@
 
+
 import { User } from "../../entities/user";
 import { IUserRepository } from "./user.repository";
 let usersMemoryLeak: User[] = []
@@ -17,15 +18,18 @@ export class UserRepositoryPrisma implements IUserRepository {
 
     async save(user: User): Promise<User[]> {
         const hasUser = usersMemoryLeak.find(item=> item.id == user.id)
-        if(!hasUser){
+
+        if(hasUser){
             return 
         }
+    
         usersMemoryLeak.push(user)
 
         return usersMemoryLeak
     }
 
     async list() {
+        console.log("bateu aqui", usersMemoryLeak)
         return usersMemoryLeak
     }
 
