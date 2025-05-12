@@ -1,4 +1,5 @@
-import { CategoryRepositoryPrisma } from "../../repositories/categoryRepository/category.repository.prisma";
+
+import { CategoryRepositoryPrisma } from "../../../repositories/categoryRepository/category.repository.prisma";
 import { CreateCategoryController } from "./createCategory.controller";
 import { CreateCategoryUseCase } from "./createCategory.usecase";
 

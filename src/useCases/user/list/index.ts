@@ -1,4 +1,5 @@
-import { UserRepositoryPrisma } from "../../repositories/userRepository/user.repository.prisma";
+
+import { UserRepositoryPrisma } from "../../../repositories/userRepository/user.repository.prisma";
 import ListUserController from "./listUser.controller";
 import ListUserUsecase from "./listUser.usecase";
 

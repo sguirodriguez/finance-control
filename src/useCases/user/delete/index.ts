@@ -1,5 +1,5 @@
 
-import { UserRepositoryPrisma } from "../../repositories/userRepository/user.repository.prisma";
+import { UserRepositoryPrisma } from "../../../repositories/userRepository/user.repository.prisma";
 import { DeleteUserController } from "./deleteUser.controller";
 import { DeleteUserUseCase } from "./deleteUser.usecase";
 

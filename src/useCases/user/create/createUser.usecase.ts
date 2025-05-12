@@ -1,5 +1,6 @@
-import { User } from "../../entities/user";
-import { IUserRepository } from "../../repositories/userRepository/user.repository";
+
+import { User } from "../../../entities/User";
+import { IUserRepository } from "../../../repositories/userRepository/user.repository";
 import { CreateUser, ICreateUserRequestDTO } from "./createUser";
 
 //dependecy inversion-> não depende de uma implementação direta/concreta e sim do contrato/interface

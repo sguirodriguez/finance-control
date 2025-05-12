@@ -1,6 +1,5 @@
 
-
-import { User } from "../../entities/user";
+import { User } from "../../entities/User";
 import { IUserRepository } from "./user.repository";
 let usersMemoryLeak: User[] = []
 //LISKOV --> DEFINE COMO SERÁ IMPLEMENTADO O REPOSITORY, QUALQUER IMPLEMENTAÇÃO DESSA INTERFACE PODE SER USADA NA CRIAÇÃO DE USUÁRIO
@@ -29,7 +28,6 @@ export class UserRepositoryPrisma implements IUserRepository {
     }
 
     async list() {
-        console.log("bateu aqui", usersMemoryLeak)
         return usersMemoryLeak
     }
 

@@ -1,5 +1,7 @@
-import { Category } from "../../entities/category";
-import { ICategoryRepository } from "../../repositories/categoryRepository/category.repository";
+
+
+import { Category } from "../../../entities/category";
+import { ICategoryRepository } from "../../../repositories/categoryRepository/category.repository";
 import { ICreateCategoryUseCase, ICreateCategoryCreateRequestDTO } from "./createCategory";
 
 export class CreateCategoryUseCase implements ICreateCategoryUseCase{

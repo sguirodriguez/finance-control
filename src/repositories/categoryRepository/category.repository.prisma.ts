@@ -1,4 +1,5 @@
-import { Category } from "../../entities/category";
+
+import { Category } from "../../entities/Category";
 import { ICategoryRepository } from "./category.repository";
 
 let categoryMemoryLeak: Category[] = []
@@ -15,9 +16,11 @@ export class CategoryRepositoryPrisma implements ICategoryRepository {
 
     async save(category: Category) {
         const hasCategory = categoryMemoryLeak.find(item=>item.id === category.id)
-        if(!hasCategory){
+
+        if(hasCategory){
             return
         }
+
         categoryMemoryLeak.push(category)
 
         return categoryMemoryLeak

@@ -1,4 +1,4 @@
-import { IUserRepository } from "../../repositories/userRepository/user.repository";
+import { IUserRepository } from "../../../repositories/userRepository/user.repository";
 import { IListUserUseCase } from "./listUser";
 
 class ListUserUsecase implements IListUserUseCase{

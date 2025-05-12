@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express'
-import { createUserController } from '../useCases/createUser'
-import { updateUserController } from '../useCases/updateUser'
-import { deleteUserController } from '../useCases/deleteUser'
-import { listUserController } from '../useCases/listUser'
+import { createUserController } from '../useCases/user/create'
+import { updateUserController } from '../useCases/user/update'
+import { deleteUserController } from '../useCases/user/delete'
+import { listUserController } from '../useCases/user/list'
 
 const router = express.Router()
 
