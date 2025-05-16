@@ -1,5 +1,5 @@
 
-import { User } from "../../entities/User";
+import { User } from "../../entities/user";
 import { IUserRepository } from "./user.repository";
 let usersMemoryLeak: User[] = []
 //LISKOV --> DEFINE COMO SERÁ IMPLEMENTADO O REPOSITORY, QUALQUER IMPLEMENTAÇÃO DESSA INTERFACE PODE SER USADA NA CRIAÇÃO DE USUÁRIO

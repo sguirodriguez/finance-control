@@ -1,5 +1,5 @@
 
-import { Category } from "../../entities/Category";
+import { Category } from "../../entities/category";
 import { ICategoryRepository } from "./category.repository";
 
 let categoryMemoryLeak: Category[] = []

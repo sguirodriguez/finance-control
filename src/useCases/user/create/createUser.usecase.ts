@@ -1,5 +1,6 @@
 
-import { User } from "../../../entities/User";
+
+import { User } from "../../../entities/user";
 import { IUserRepository } from "../../../repositories/userRepository/user.repository";
 import { CreateUser, ICreateUserRequestDTO } from "./createUser";
 
