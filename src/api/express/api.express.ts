@@ -1,6 +1,6 @@
-import globalRoutes from "../../routes/global";
-import userRoutes from "../../routes/user"
-import categoryRoutes from "../../routes/category"
+import globalRoutes from "../../application/routes/global";
+import userRoutes from "../../application/routes/user"
+import categoryRoutes from "../../application/routes/category"
 import { Api } from "../api";
 import { Express } from "express";
 
